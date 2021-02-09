@@ -2,7 +2,7 @@ import 'dart:io';
 
 void main() {
   List<int> nbres = [];
-  int nbr, j, pg;
+  int nbr, j, pg, position;
   print("==================== PLUS GRAND NOMBRE ====================");
 
   j = 0;
@@ -14,10 +14,12 @@ void main() {
     print("Entrer le nombre n ° ${j + 1}: ");
     nbres[j] = int.parse(stdin.readLineSync());
 
-    if (j == 1 || nbres[j] > pg) {
+    if (j == 0 || nbres[j] > pg) {
       pg = nbres[j];
+      position = (j + 1);
     }
   }
 
   print("Le nombre le plus grand du tableau est : $pg");
+  print("Le nombre $pg a été saisi en position n° $position");
 }
